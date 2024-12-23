@@ -99,4 +99,4 @@ pnpm dev
 
 MIT © [Mitul Patel](https://mitulpa.tel)
 
-A reimagining of the BMI calculator challenge on (frontendmentor.io)[https://frontendmentor.io]
+A reimagining of the BMI calculator challenge on [frontendmentor.io](https://frontendmentor.io)
