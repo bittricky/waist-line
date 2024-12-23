@@ -31,7 +31,7 @@ waistline bmi --height 1.75 --weight 70
 ### Calculate BMI using imperial units
 
 ```bash
-waistline bmi --height 69 --weight 154 --imperial
+waistline bmi --height 70 --weight 154 --imperial
 ```
 
 - Height in inches
