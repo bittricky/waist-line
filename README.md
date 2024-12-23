@@ -2,7 +2,7 @@
 
 > Those denim jeans collecting dust in your closet? No problem! With waist line, you can easily find out exactly how many sizes away you are from making them a reality again—no stretchy excuses included!
 
-A command-line tool to calculate your Body Mass Index (BMI) with support for both metric and imperial units.
+A command-line tool to calculate your Body Mass Index (BMI) with support for both metric and imperial units from the comfort of your terminal.
 
 ## 🚀 Installation
 
