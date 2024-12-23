@@ -14,15 +14,31 @@ const flags = {
 		shortFlag: `d`,
 		desc: `Print debug info`
 	},
-
+	height: {
+		type: `number`,
+		desc: `Height in meters`,
+		shortFlag: 'h'
+	},
+	weight: {
+		type: `number`,
+		desc: `Weight in kilograms`,
+		shortFlag: 'w'
+	},
+	imperial: {
+		type: `boolean`,
+		default: false,
+		shortFlag: 'i',
+		desc: `Use imperial units (height in inches, weight in pounds)`
+	}
 };
 
 const commands = {
-	help: { desc: `Print help info` }
+	help: { desc: `Print help info` },
+	bmi: { desc: `Calculate BMI (Body Mass Index)` }
 };
 
 const helpText = meowHelp({
-	name: `calai`,
+	name: `waistline`,
 	flags,
 	commands
 });
