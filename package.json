@@ -36,7 +36,9 @@
 		"format": "prettier --write \"./**/*.{js,json}\"",
         "dev": "node index.js",
         "start": "node index.js",
-        "prepublishOnly": "pnpm run format",
+        "test": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "prepublishOnly": "pnpm run format && pnpm test",
         "publish:patch": "pnpm version patch && pnpm publish",
         "publish:minor": "pnpm version minor && pnpm publish",
         "publish:major": "pnpm version major && pnpm publish"
@@ -52,6 +54,7 @@
 		"meow": "^13.2.0"
 	},
 	"devDependencies": {
-		"prettier": "^3.4.2"
+		"prettier": "^3.4.2",
+		"vitest": "^1.1.3"
 	}
 }
