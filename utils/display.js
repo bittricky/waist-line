@@ -9,7 +9,6 @@ const createBMIScale = bmi => {
 		{ max: 40, color: chalk.red, label: 'Obese' }
 	];
 
-	const markers = ranges.map(r => r.max);
 	const scaleWidth = width - 2;
 	const scale = '─'.repeat(scaleWidth);
 
