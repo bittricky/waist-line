@@ -10,7 +10,9 @@
 import cli from './utils/cli.js';
 import init from './utils/init.js';
 import log from './utils/log.js';
+import chalk from 'chalk';
 import { calculateBMI, getBMICategory } from './utils/bmi.js';
+import { displayBMIResult } from './utils/display.js';
 
 const { flags, input, showHelp } = cli;
 const { clear, debug, height, weight, imperial } = flags;
@@ -22,23 +24,21 @@ const { clear, debug, height, weight, imperial } = flags;
 
 	if (input.includes('bmi')) {
 		if (!height || !weight) {
-			console.error('Error: Both height and weight are required.');
-			console.log('Example usage:');
-			console.log('  With metric units (default):');
-			console.log('    waistline bmi --height 1.75 --weight 70');
-			console.log('  With imperial units:');
-			console.log('    waistline bmi --height 69 --weight 154 --imperial');
+			console.error(chalk.red.bold('Error: Both height and weight are required.'));
+			console.log('\nExample usage:');
+			console.log(chalk.cyan('  With metric units (default):'));
+			console.log(chalk.green('    waistline bmi --height 1.75 --weight 70'));
+			console.log(chalk.cyan('\n  With imperial units:'));
+			console.log(chalk.green('    waistline bmi --height 70 --weight 154 --imperial'));
 			process.exit(1);
 		}
 
 		try {
 			const bmi = calculateBMI(height, weight, imperial);
 			const category = getBMICategory(bmi);
-			console.log(`\nBMI Result:`);
-			console.log(`BMI: ${bmi}`);
-			console.log(`Category: ${category}\n`);
+			displayBMIResult(bmi, category, imperial);
 		} catch (error) {
-			console.error(`Error: ${error.message}`);
+			console.error(chalk.red.bold(`\n✖ Error: ${error.message}\n`));
 			process.exit(1);
 		}
 	}
