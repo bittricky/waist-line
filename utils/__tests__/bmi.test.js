@@ -24,19 +24,27 @@ describe('BMI Calculator', () => {
 		});
 
 		it('should throw error for zero height', () => {
-			expect(() => calculateBMI(0, 70, false)).toThrow('Height and weight must be positive numbers');
+			expect(() => calculateBMI(0, 70, false)).toThrow(
+				'Height and weight must be positive numbers'
+			);
 		});
 
 		it('should throw error for zero weight', () => {
-			expect(() => calculateBMI(1.75, 0, false)).toThrow('Height and weight must be positive numbers');
+			expect(() => calculateBMI(1.75, 0, false)).toThrow(
+				'Height and weight must be positive numbers'
+			);
 		});
 
 		it('should throw error for negative height', () => {
-			expect(() => calculateBMI(-1.75, 70, false)).toThrow('Height and weight must be positive numbers');
+			expect(() => calculateBMI(-1.75, 70, false)).toThrow(
+				'Height and weight must be positive numbers'
+			);
 		});
 
 		it('should throw error for negative weight', () => {
-			expect(() => calculateBMI(1.75, -70, false)).toThrow('Height and weight must be positive numbers');
+			expect(() => calculateBMI(1.75, -70, false)).toThrow(
+				'Height and weight must be positive numbers'
+			);
 		});
 	});
 
@@ -67,9 +75,9 @@ describe('BMI Calculator', () => {
 		it('should handle edge cases at category boundaries', () => {
 			expect(getBMICategory(18.5)).toBe('Normal weight'); // Lower bound of normal
 			expect(getBMICategory(24.9)).toBe('Normal weight'); // Upper bound of normal
-			expect(getBMICategory(25.0)).toBe('Overweight');   // Lower bound of overweight
-			expect(getBMICategory(29.9)).toBe('Overweight');   // Upper bound of overweight
-			expect(getBMICategory(30.0)).toBe('Obese');        // Lower bound of obese
+			expect(getBMICategory(25.0)).toBe('Overweight'); // Lower bound of overweight
+			expect(getBMICategory(29.9)).toBe('Overweight'); // Upper bound of overweight
+			expect(getBMICategory(30.0)).toBe('Obese'); // Lower bound of obese
 		});
 	});
 });

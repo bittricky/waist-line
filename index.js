@@ -24,12 +24,20 @@ const { clear, debug, height, weight, imperial } = flags;
 
 	if (input.includes('bmi')) {
 		if (!height || !weight) {
-			console.error(chalk.red.bold('Error: Both height and weight are required.'));
+			console.error(
+				chalk.red.bold('Error: Both height and weight are required.')
+			);
 			console.log('\nExample usage:');
 			console.log(chalk.cyan('  With metric units (default):'));
-			console.log(chalk.green('    waistline bmi --height 1.75 --weight 70'));
+			console.log(
+				chalk.green('    waistline bmi --height 1.75 --weight 70')
+			);
 			console.log(chalk.cyan('\n  With imperial units:'));
-			console.log(chalk.green('    waistline bmi --height 70 --weight 154 --imperial'));
+			console.log(
+				chalk.green(
+					'    waistline bmi --height 70 --weight 154 --imperial'
+				)
+			);
 			process.exit(1);
 		}
 
